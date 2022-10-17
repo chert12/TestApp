@@ -1,4 +1,4 @@
-##Test project for Frever
+## Test project for Frever
 
 ### Features
 
@@ -6,6 +6,6 @@
 - User can record camera movement and store it in local storage (StreamingAssets);
 - User can see previously created records and play it;
 
-####Notes
+#### Notes
 - Unity version 2021.3.2f1;
 - Tested on MacOS;
