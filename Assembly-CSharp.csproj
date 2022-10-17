@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{485f89b2-dbcc-5c5f-68f9-43145ebfeb73}</ProjectGuid>
+    <ProjectGuid>{01128c5c-951b-82ed-389b-17ff5eaf668f}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -41,42 +41,41 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Scripts/Views/Rotatable.cs" />
-     <Compile Include="Assets/Scripts/Abstractions/IRecordable.cs" />
-     <Compile Include="Assets/Scripts/Abstractions/ARecordData.cs" />
-     <Compile Include="Assets/Scripts/Data/LocationRecordData.cs" />
-     <Compile Include="Assets/Scripts/Views/Recorder.cs" />
-     <Compile Include="Assets/Scripts/Views/Player.cs" />
-     <Compile Include="Assets/Scripts/Abstractions/IRecordProcessor.cs" />
-     <Compile Include="Assets/Scripts/Views/Controller.cs" />
-     <Compile Include="Assets/Scripts/Views/UiRoot.cs" />
-     <Compile Include="Assets/Scripts/Data/SerializableVector.cs" />
      <Compile Include="Assets/Scripts/Abstractions/IUiViewModel.cs" />
-     <Compile Include="Assets/Scripts/Views/RecordButtonPanel.cs" />
+     <Compile Include="Assets/Scripts/Views/Rotatable.cs" />
      <Compile Include="Assets/Scripts/Data/Constants.cs" />
+     <Compile Include="Assets/Scripts/Views/RecordsView.cs" />
+     <Compile Include="Assets/Scripts/Data/InputType.cs" />
+     <Compile Include="Assets/Scripts/Abstractions/IRecordService.cs" />
+     <Compile Include="Assets/Scripts/Data/LocationRecordData.cs" />
+     <Compile Include="Assets/Scripts/Views/Player.cs" />
+     <Compile Include="Assets/Scripts/Data/SerializableVector.cs" />
+     <Compile Include="Assets/Scripts/Services/RecordLocalStorageService.cs" />
+     <Compile Include="Assets/Scripts/Views/Recorder.cs" />
      <Compile Include="Assets/Scripts/Services/AppRoot.cs" />
+     <Compile Include="Assets/Scripts/Abstractions/ARecordData.cs" />
      <Compile Include="Assets/Scripts/Abstractions/IUiService.cs" />
      <Compile Include="Assets/Scripts/Abstractions/IRecordsStorageService.cs" />
-     <Compile Include="Assets/Scripts/Services/RecordLocalStorageService.cs" />
+     <Compile Include="Assets/Scripts/Views/RecordButtonPanel.cs" />
+     <Compile Include="Assets/Scripts/Views/UiRoot.cs" />
+     <Compile Include="Assets/Scripts/Abstractions/IRecordProcessor.cs" />
      <Compile Include="Assets/Scripts/Data/LocationPoint.cs" />
      <Compile Include="Assets/Scripts/Views/RecordViewElement.cs" />
-     <Compile Include="Assets/Scripts/Views/RecordsView.cs" />
      <Compile Include="Assets/Scripts/Services/RecordService.cs" />
+     <Compile Include="Assets/Scripts/Abstractions/IRecordable.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
+     <None Include="Assets/StreamingAssets/Records/record_2.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
-     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
-     <None Include="Assets/StreamingAssets/Records/record_4.txt" />
      <None Include="Assets/StreamingAssets/Records/record_3.txt" />
-     <None Include="Assets/StreamingAssets/Records/record_5.txt" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
      <None Include="Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
-     <None Include="Assets/StreamingAssets/Records/record_2.txt" />
      <None Include="Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
@@ -334,13 +333,13 @@
      <HintPath>/Applications/Unity/2021.3.2f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="ReportGeneratorMerged">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll</HintPath>
      </Reference>
      <Reference Include="Newtonsoft.Json">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>/Applications/Unity/2021.3.2f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -949,82 +948,82 @@
      <HintPath>/Applications/Unity/2021.3.2f1/Unity.app/Contents/UnityReferenceAssemblies/unity-4.8-api/Facades/netstandard.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Core">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.Services.Core.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.Services.Core.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
      </Reference>
      <Reference Include="Unity.EditorCoroutines.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Core.Analytics">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Core.Environments">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.Services.Core.Environments.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.Services.Core.Environments.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
-     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/frever_test/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
+     <HintPath>/Users/oleksiichernov/Documents/UnityProjects/FreverTestApp/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

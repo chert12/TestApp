@@ -4,51 +4,45 @@ using UnityEngine;
 
 namespace Chernov.Test.Services
 {
+    /// <summary>
+    /// Class defines a general app controller
+    /// </summary>
     public class AppRoot : MonoBehaviour
     {
         #region data
 
         [SerializeField] private UiRoot _uiRoot;
-        [SerializeField] private Recorder _recorder;
-        [SerializeField] private Player _player;
-        
+        [SerializeField] private RecordService _recordServiceImpl;
+
         private static AppRoot _instance;
-        private IRecordable _recordable;
-        private IRecordProcessor _recordProcessor;
         private IUiViewModel _uiViewModel;
         private IUiService _uiService;
         private IRecordsStorageService _recordsStorageService;
+        private IRecordService _recordService;
 
-        private RecordService _recordService;
-        
         #endregion
 
 
         #region interface
 
         public static AppRoot Instance => _instance;
-
-        public IRecordable Recordable => _recordable;
-        public IRecordProcessor RecordProcessor => _recordProcessor;
         public IUiViewModel UiViewModel => _uiViewModel;
         public IUiService UiService => _uiService;
         public IRecordsStorageService RecordsStorageService => _recordsStorageService;
-        
+        public IRecordService RecordService => _recordService;
 
         #endregion
-        
+
         #region implementation
-        
+
         private void Awake()
         {
             _instance = this;
             _uiService = _uiRoot;
             _uiViewModel = _uiRoot;
-            _recordable = _recorder;
-            _recordProcessor = _player;
-            
+            _recordService = _recordServiceImpl;
+
             _recordsStorageService = new RecordLocalStorageService();
-            _recordService = new RecordService();
         }
 
         #endregion

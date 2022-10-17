@@ -8,15 +8,18 @@ using UnityEngine;
 
 namespace Chernov.Test.Services
 {
+    /// <summary>
+    /// Class implements logic for downloading and uploading <see cref="ARecordData"/> from local storage
+    /// </summary>
     public class RecordLocalStorageService : IRecordsStorageService
     {
+        #region interface
 
         public void SaveRecord(ARecordData recordData)
         {
-            var d = new DirectoryInfo(Path.Combine(Application.streamingAssetsPath, Constants.Filenames.RecordsFolderName)); //Assuming Test is your Folder
-
-            var files = d.GetFiles("*.txt"); //Getting Text files
-
+            var d = new DirectoryInfo(Path.Combine(Application.streamingAssetsPath,
+                Constants.Filenames.RecordsFolderName));
+            var files = d.GetFiles(Constants.Filenames.FileSearchPattern);
             var nameFormat = Path.Combine(Application.streamingAssetsPath, Constants.Filenames.RecordsFolderName,
                 Constants.Filenames.RecordFilenameTemplate);
 
@@ -26,19 +29,21 @@ namespace Chernov.Test.Services
             {
                 filename = string.Format(nameFormat, filename.Length + i++);
             }
+
             File.WriteAllText(filename, JsonConvert.SerializeObject(recordData));
         }
 
         public IEnumerable<string> GetAvailableRecords()
         {
-            var d = new DirectoryInfo(Path.Combine(Application.streamingAssetsPath, Constants.Filenames.RecordsFolderName));
+            var d = new DirectoryInfo(Path.Combine(Application.streamingAssetsPath,
+                Constants.Filenames.RecordsFolderName));
 
-            var files = d.GetFiles("*.txt");
+            var files = d.GetFiles(Constants.Filenames.FileSearchPattern);
             var result = files.Select(file => file.Name).ToList();
             return result;
         }
 
-        public T GetSavedRecord<T>(string path) where T:ARecordData
+        public T GetSavedRecord<T>(string path) where T : ARecordData
         {
             if (!File.Exists(path))
             {
@@ -50,5 +55,7 @@ namespace Chernov.Test.Services
             var result = JsonConvert.DeserializeObject<T>(raw);
             return result;
         }
+
+        #endregion
     }
 }

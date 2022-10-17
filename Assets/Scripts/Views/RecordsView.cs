@@ -1,13 +1,21 @@
-using System;
 using Chernov.Test.Services;
 using UnityEngine;
 
 namespace Chernov.Test.Views
 {
+    /// <summary>
+    /// Class defines Ui panel for showing available records
+    /// </summary>
     public class RecordsView : MonoBehaviour
     {
+        #region data
+
         [SerializeField] private RecordViewElement _elementPrefab;
         [SerializeField] private RectTransform _uiRoot;
+
+        #endregion
+
+        #region implementation
 
         private void Start()
         {
@@ -33,5 +41,7 @@ namespace Chernov.Test.Views
                 Destroy(_uiRoot.GetChild(i).gameObject);
             }
         }
+
+        #endregion
     }
 }

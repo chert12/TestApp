@@ -3,13 +3,17 @@ using System.Collections;
 using System.Linq;
 using Chernov.Test.Abstractions;
 using Chernov.Test.Data;
-using Chernov.Test.Views.Data;
+using Chernov.Test.Services;
 using UnityEngine;
 
 namespace Chernov.Test.Views
 {
+    /// <summary>
+    /// Class uses for playing recorded movement
+    /// </summary>
     public class Player : MonoBehaviour, IRecordProcessor
     {
+        #region interface
 
         public void Process(ARecordData data)
         {
@@ -18,7 +22,11 @@ namespace Chernov.Test.Views
                 StartCoroutine(StartRecordPlaying(typedData));
             }
         }
-        
+
+        #endregion
+
+        #region implementation
+
         private IEnumerator StartRecordPlaying(LocationRecordData data)
         {
             var waiter = new WaitForEndOfFrame();
@@ -30,6 +38,10 @@ namespace Chernov.Test.Views
                 transform.localEulerAngles = locationData.Rotation.ToUnityVector();
                 yield return waiter;
             }
+
+            AppRoot.Instance.RecordService.StopPlaying();
         }
+
+        #endregion
     }
 }

@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using Chernov.Test.Abstractions;
-using Chernov.Test.Data;
-using UnityEngine;
 
 namespace Chernov.Test.Data
 {
+    /// <summary>
+    /// Class defines data which used for describing GameObject movement
+    /// </summary>
     [Serializable]
     public class LocationRecordData : ARecordData
     {
